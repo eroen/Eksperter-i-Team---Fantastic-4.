@@ -1,0 +1,129 @@
+%!TEX TS−program = xetex
+%!TEX encoding = UTF−8 Unicode
+\documentclass[a4paper, oneside, fleqn, halfparskip]{scrartcl}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{undertilde}
+\usepackage{xunicode}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+\setsansfont[Mapping=tex-text]{Linux Biolinum O}
+\setmonofont[Mapping=tex-text, Scale=0.8]{DejaVu Sans Mono}
+% \setmonofont[Mapping=tex-text, Scale=0.9]{Courier New}
+%\setromanfont[Mapping=tex-text]{Times New Roman}
+%\setromanfont[Mapping=tex-text]{Arial}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{color}
+% \usepackage{transparent}
+\usepackage{listings}
+
+\renewcommand{\labelenumi}{\alph{enumi})}
+\renewcommand{\labelenumii}{\roman{enumii})}
+%\renewcommand{\vec}[1]{\ensuremath{\mathbf{#1}}} % for vectors
+\renewcommand{\vec}[1]{\ensuremath{\boldsymbol{#1}}} % for vectors
+\newcommand{\mat}[1]{\ensuremath{\utilde{#1}}} % for matrices
+\newcommand{\curl}[1]{\ensuremath{\mathbf{\nabla} \times #1}} % 
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}} % 
+\newcommand{\re}[1]{\ensuremath{\text{Re}\left\{ #1 \right\}}} % 
+\renewcommand{\exp}[1]{\ensuremath{\text{e}^{ #1 }}} % 
+% \def\svgwidth{5cm}
+% \def\unitlength{10cm}
+\begin{document}
+\title{Group log, 2011-02-16}
+\subject{Homo Mobilis — Eksperter i Team}
+\author{Erik Moen — Fantastic 4.}
+\maketitle
+\tableofcontents
+
+\section{Our agenda}
+\begin{itemize}
+  \item Morning ``conversation''
+  \item Rally to the EMG lab
+  \begin{itemize}
+    \item Test aquisition with existing equipment
+    \item Test aquisition with laptop computer, possibly using \textsc{matlab}
+  \end{itemize}
+\end{itemize}
+
+\section{Log}
+\subsection{Morning meeting}
+The meeting started with a session about how people greet each other in our (various) cultures. After each and every one of the participants had submitted their view, it was found to vary locally, rather than globally. It was also found that greeting another person can include hand gestures and body language. This exercise allowed us to gain slightly more insight into each other's cultures, and what said cultures would concider worthwhile to mention.
+
+In the following short quiet period, various subjects were clarified to reduce confusion between a few members on what resources were available, and certain time-consuming computer operations were initiated. The members also agreed that with current progress, certain aspects of our grand plans might have to be scaled down.
+
+The ``semesterplan'' was presented. Highlights include:
+\begin{description}
+  \item[2011-03-16] Oral presentation of project and process.
+  \item[2011-04-13] Last village day.
+\end{description}
+It was commented that we must ``work a lot, because of a poor schedule.''
+
+\subsection{Laboratory work}
+We departed from the basement to familiarise ourselves with the equipment in the laboratory. Upon arriving at the lab, we found no equipment, and the locals were unable to produce usefull information on where such equipment might be found. We then returned to ask Prof. Andreea back in the basement for help, which she gladly offered. An excursuion was made to the roof lab, but no equipment was to be found there either.
+
+We eventually returned to the second floor lab (which we initially visited), and the equipment was found (by Prof. Øyvind) hidden in the office next door. It unfortunately turned out to be non-functional; it appeared the computer's power supply was broken.
+
+Andreas and Erik were dispatched to bring this deplorable fact to the attention of a Mr. Torkil Hansen, resident in the basement below the lab. Mr. Torkil was eventually tracked down and brought wo the computer in question, whereupon he removed it from the equipment cart and took it with him back to the basement, estimating to have it functional an hour later.
+
+As suggested by Prof. Øyvind, we used the time ``created'' to study the rest of the equipment and read a bit of litterature supplied by the same; namely a manual for the system and a project report from the previous year, working on the same system. At the same time, Øyvind explined that he is not our advisor, and can thus not spend alot of time with our group. He suggested we instead contacted some unnamed person at the Movement Science Dept. at Dragvoll. Conversely, if we had technical problems, we could use Øyvind as a resource.
+
+Prof. Øyvind returned a bit later, apparently at a loss for work, and presented us with a new idea; to use acoustomyography instead of electromyography for our project. This area has no been studied at NTNU as much, and would give different difficulties due to this, but also provide the prospect of doing something more ``gorundbreaking.'' Another side-effect is simpler equipment, or at least more easily availabe. The AMG signals are apparently very similar to EMG signals, and can be captured using tiny (piezo-electric) microphones.
+
+The group unanimously decided this was a good direction to take, as the hardware would be simpler and cause less trouble, although there is less expertise available at our University. It was suggested we use four microphones.
+
+Prof. Øyvind also provided us with a vaulable bit of insight into the core of ``Eksperter i Team:''
+\begin{itemize}
+  \item The process should not only be described, also controlled. This is important.
+  \item We should prove that we have evaluated qualities and attempted to improve them, using the theory. A key word is ``Kontrollert pådrag.''
+  \item Our project is merely a case, to enable us to use group collaboration techniques.
+\end{itemize}
+
+As we left for lunch, we stopped by Mr. Torkil, who, having decided to replace the whole computer, claimed to be unable to complete the repairs untill the same afternoon. We decided to return to him after a session of village mandated ``feedback.''
+
+\subsection{Lunch}
+A decision had been made to have our lunch in the company of each other, in an attempt assess the power of meals to control the development of the group psyche and inter-group communication, as suggested by Prof. Øyvind.
+
+Arash presented his work so far on filtering the signal with his novel ``filter bank.'' This was done to spread knowlege of filtering and the difficulties involved among the group, and to provide a base for ``lower level'' work to build under. Predictably, the ability to follow his explanation was not equally shared among the group, but some key knowledge was transfered.
+
+The group then looked at various microphones, to be used as transducers for AMG, it was found difficult to get mics with frequency ranges below 50 Hz. It was decided that the microphone should work at low frequencies and have high sensitivity. We found a range of appropriate capacitor mics, but it appears difficult to obtain a piezoelectric microphone with accompanying specifications.
+
+The group then signed up for meetings on ``It's Learning,'' the preferances made are as follows:
+\begin{description}
+  \item[Feedback exercise] 2011-03-02 10:00 to 10:30
+  \item[Group log feedback] 2011-03-09 10:00 to 10:30
+  \item[Meeting with Marianne and Marie] 2011-03-23 09:30 to 10:30
+  \item[Meeting with Prof. Andreea] 2011-03-23 10:30 to 11:00
+\end{description}
+The choice of hours was made to minimise the amount of time wasted due to transport, as we now have sufficient time to work on out project both before and after lunch. As a side note, Mr. Arash and Mr. Victor will be in Oslo between 2011-04-04 and 2011-04-08.
+
+\subsection{Feedback exercise}
+An exercise was mandated by the village; we should device a way to transport the Himalayas to Trondheim. We decided to use rotation matrices and multiply them by the Himalayan coordinates to move them. Obviously a windowind function must be applied first, so to avoid moving Trondheim too. The matrices would first move the Himalayas westward to the zero median, by rotating around the $z$-axis, then north around the $y$-axis to the latitude of Trondheim, and finally east to Trondheim around the $z$-axis. Two alternate solutions were also presented, one involving a frictionless tunnel and waiting for approximately 42 minutes, and one involving turles. While we did not win the following votation on best method of transportation, only one other group got more votes than us.
+
+There was, unfortunately, no strong opinions against any of these propositions among the group, possibly denying us an opportunity to better understand our differences, both professionally and culturally.
+
+A second exercise was also done, where each member of the group wrote on three small pieces of paper two positive and one negative item about the project we are working on. The (anonymous) notes were collected in a hat and read aut loud and discussed. The main positive issues that came up were high ambitions, many, new and good ideas and knowledgeable participants. The main obstructions were communication problems (ascribed to backgrounds) and defective and old equipment. It was also suggested to devote more time towards the process report and to lower our ambitions to reduce the workload.
+
+During the discussions, it was decided that the difficulties in comminucation mainly came from language differences and different professional jargon in the members' main field of work. The latter includes using the same words, but meaning two subtly different subjects.
+
+\subsection{Further laboratory work}
+At this point, a messenger was dispatched to check up on Mr. Torkil, and found he would not complete the repairs today. 
+
+In order to create the sense of our work leading to some practical consequence, the group decided to attempt to create a simple EMG system using a laptop computer's sound card and a pair of wires, masterfully soldered to a 3.5 mm jack using equipment borrowed from ``Omega Verksted.'' After some work in \textit{Audacity}, it was decided there was a problem with the sound card, computer or some piece of software, and the group migrated to the ``Ole Brum''-laboratory, as it had \textsc{matlab} available. It appears some work is necessary in order to have working data aquisition on the laptop.
+
+At the laboratory, a signal primarily consisting of noise was captured, and (lead by Mr. Arash) the group attempted to filter some of it out, an endeavour that proved moderately successfull. Simultaneously, more work was done on finding a suitable microphone for AMG, which turned into a few different candidates. 
+
+It would appear the group should have better assigned tasks to the members at this point, as a fair amount of time was spent with far too much manpower solving the same problems. This should have been seen to by the leader.
+
+\section{Closing words}
+The group disemminated around 17:30. The next meeting will be lead by Miss. Kristine.
+
+The day was far less productive than planned, apparently due to logistic assumptions being overly high.
+
+\end{document}
