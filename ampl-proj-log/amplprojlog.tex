@@ -1,0 +1,77 @@
+**AMG aquicition device
+
+Objectives:
+The main idea of the aquisition device is to convert the acoustic waves in the subject's muscles (AMG signal) into electrical signals to be digitised by the sound card of a laptop computer.
+
+
+Theory:
+The initial mechanical movements are converted into electrical signals by a transducer, in the form of a capacitive microphone.
+ 
+ - Microphones
+ -Based on plate capacitor and field effect transistor.
+[[[This text is missing untill I write it]]]
+[[[Insert Schematic for microphone]]]
+ 
+ - Digitiser
+The digitiser in the laptop was measured to have a dynamic range of $\pm 2$ Volt and to be high-pass filtered with a cut-off frequency near 2 Hertz.
+
+The signal from the microphone is a very weak ([[[value]]]) voltage (ca. 5 k\Omega) signal [[[must measure]]] and the accepted signal into the laptop computer's digitiser is a voltage signal with peak amplitude of 2 V, digitized at 48 kHz with 16 bit resolution. This gives a theoretical maximum signal frequency of 24 kHz and resolution of approximately 61 µV.
+
+
+Requirements:
+The AMG signal has very low frequency, so there is no need to take into account the high frequency cut-off. The low frequencies pose another problem, as both the digitiser and the transducer will have poor performance at very low frequencies (the equipment is made for audible frequencies).
+
+In order to keep as much information as possible for signal processing the aquisition device must be linear and have flat frequency responses at the frequencies in question. This is due to the difficulty of removing nonlinear distortions in processing. A varying frequency response can be compensated for by processing, but an area with low transmission will create additional noise, as thermal and quantisation noise is not reduced, resulting in a reduced signal-to-noise ratio (SNR).
+
+The main design specifications of the device are
+\begin{itemize}
+  \item Low noise
+  \item Linear
+  \item Functional at very low frequency
+  \item Correct amplification, preferably adjustable
+  \item High input and output impedance
+\end{itemize}
+
+
+ - Fabrication facility
+The institute is in posession of a splendid fabrication facility for printed circuit boards (PCB) on the second floor of the B block in the Elektro-building. The boards are milled and the process handles two-sided boards.
+
+The institute also supplies necessary components, and has a library of common components for use.
+
+The specifications we designed the amplifier after are:
+\begin{itemize}
+  \item Minimum trace width: 0.4 mm
+  \item Minimum distance, different signals: 0.4 mm
+  \item Via diameter: 0.9 mm
+  \item SMD component size: 16 mm $\times$ 08 mm
+  \item IC shape: SSOP
+\end{itemize}
+
+
+Amplifier soulution in general:
+We decided to use a non-inverting operational amplifier, an altogether simple and well-tested circuit. It satisfies the demand for low frequency operation (down to DC), high input and output inpedance, linearity and easily controllable gain.
+
+The PCB was made with four channels, in order to have signals from several sensors. By post processing this can be used for increased signal fidelity or to measure several muscles, for example on opposite sides of a limb.
+
+The PCB also includes a device for calculating the difference between RMS values between two channels, as described in [[[OTHER PART]]]. The inplementation of this device is done with rectifiers, low-pass filters and an operational amplifier for output buffer, in an inverting circuit.
+
+Alternative solution (emittarføljar?)
+
+Alternative --- Heterodyne
+In order to avoid the high-pass filter in the laptop's digitiser, one method is to use a heterodyne to move the signal frequency band to a higher frequency. This can be achieved by a hardware multiplier and a separate sine wave oscillator. The inverse operation could then be done in software to obtain the original signal.
+
+This idea was canceled as the high-pass filter was found to have a very low cut-off frequency, presumed to be less significant than the frequency response of the microphone.
+
+Component specs:
+\begin{itemize}
+  \item Operational amplifier: STMicroelectronics LM324
+  \item Microphone …
+\end{itemize}
+
+
+Specific solution
+[[[Picture of circuit and PCB (both sides and silkscreen/component placement)]]]
+ - Highlights?
+[[[Photograph of the populated PCB]]]
+
+Solution specs?
